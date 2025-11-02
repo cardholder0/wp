@@ -6,6 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php wp_head(); ?>
+    <link rel="icon" type="image/png" href="<?php echo esc_url(get_theme_file_uri('src/favicon/favicon-96x96.png')); ?>" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?php echo esc_url(get_theme_file_uri('src/favicon/favicon.svg')); ?>" />
+    <link rel="shortcut icon" href="<?php echo esc_url(get_theme_file_uri('src/favicon/favicon.ico')); ?>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_theme_file_uri('src/favicon/apple-touch-icon.png')); ?>" />
+    <meta name="apple-mobile-web-app-title" content="iREV" />
+    <link rel="manifest" href="<?php echo esc_url(get_theme_file_uri('src/favicon/site.webmanifest')); ?>" />
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -15,90 +21,23 @@
             <img class="header_logo" src="<?php echo esc_url(get_theme_file_uri('src/icons/logo.svg')); ?>"
                  alt="irev logo"/>
         </div>
+        <?php
+            require_once get_template_directory() . '/inc/classes/class-header-walker.php';
+            $walker = new Custom_Header_Walker();
+        ?>
+
         <nav class="header_nav">
             <div class="header_menu">
-                <div class="header_menu_item" data-dropdown-trigger="product">
-                        <div class="header_menu_item_inner">
-                            <button>
-                                Product
-                            </button>
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                                 alt="arrow"
-                                 class="header_menu_item_arrow_unselected"
-                            />
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                                 alt="arrow"
-                                 class="header_menu_item_arrow_selected"
-                            />
-                        </div>
-                </div>
-                <div class="header_menu_item" data-dropdown-trigger="solution">
-                    <div class="header_menu_item_inner">
-                        <button>
-                            Solution
-                        </button>
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_unselected"
-                        />
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_selected"
-                        />
-                    </div>
-                </div>
-                <div class="header_menu_item">
-                        Pricing
-                </div>
-                <div class="header_menu_item" data-dropdown-trigger="resources">
-                    <div class="header_menu_item_inner">
-                        <button>
-                            Resources
-                        </button>
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_unselected"
-                        />
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_selected"
-                        />
-                    </div>
-                </div>
-                <div class="header_menu_item" data-dropdown-trigger="company">
-                    <div class="header_menu_item_inner">
-                        <button>
-                            Company
-                        </button>
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_unselected"
-                        />
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_selected"
-                        />
-                    </div>
-                </div>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'header_menu',
+                    'container'      => false,
+                    'walker'         => $walker,
+                    'items_wrap'     => '%3$s',
+                ]);
+                ?>
             </div>
-            <div class="nav_dropdown_container">
-                <div class="nav_dropdown" data-dropdown-content="product">
-                    <a>Lead Distribution</a>
-                    <a>Partner Platform</a>
-                </div>
-                <div class="nav_dropdown" data-dropdown-content="solution">
-                    <a>IGaming & Casino</a>
-                </div>
-                <div class="nav_dropdown" data-dropdown-content="resources">
-                    <a>Blog</a>
-                    <a>Affiliate Marketing Glossary</a>
-                </div>
-                <div class="nav_dropdown" data-dropdown-content="company">
-                    <a>About us</a>
-                    <a>Career</a>
-                    <a>Contact us</a>
-                </div>
-            </div>
+            <?php echo $walker->get_dropdowns_html(); ?>
         </nav>
         <button class="header_signIn">
             Sign In

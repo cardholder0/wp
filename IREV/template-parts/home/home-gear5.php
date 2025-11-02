@@ -2,174 +2,298 @@
 /**
  * Template Part: Home Gear5
  */
+    $g5_icon = get_field('g5_icon');
+    $g5_cards = get_field('g5_cards');
+    $g5_faq = get_field('g5_faq');
 ?>
 
 <section class="home_gear5">
     <header class="home_gear_header">
-        <span>[GEAR 05]</span>
-        <img
-            src="<?php echo esc_url(get_theme_file_uri('src/icons/gear5.svg')); ?>"
-        />
+        <span>
+            <?php echo esc_html( get_field('g5_title') ); ?>
+        </span>
+        <?php
+        if( !empty( $g5_icon ) ): ?>
+            <img
+                    src="<?php echo esc_url($g5_icon['url']); ?>"
+                    alt="<?php echo esc_attr($g5_icon['alt']); ?>"
+            />
+        <?php endif; ?>
     </header>
     <div class="home_gear5_container">
-        <h2>Twin-turbo solutions for affiliate domination</h2>
+        <h2>
+            <?php echo esc_html( get_field('g5_subtitle') ); ?>
+        </h2>
         <div class="home_gear5_cards_container">
-            <div class="cards_card" data-card-index="0">
-                <img src="<?php echo esc_url(get_theme_file_uri('src/icons/card1.svg')); ?>" />
-                <div class="card_label">
-                    <div class="card_label_wrapper">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/gear5partnerplatform.svg')); ?>" />
-                        <div>partner platform</div>
+            <?php
+            if( $g5_cards ): ?>
+                <div class="cards_card" data-card-index="0">
+                    <img
+                        src="<?php echo esc_url( $g5_cards['g5_card1_image']['url'] ); ?>"
+                        alt="<?php echo esc_url( $g5_cards['g5_card1_image']['alt'] ); ?>"
+                    />
+                    <div class="card_label">
+                        <div class="card_label_wrapper">
+                            <img
+                                src="<?php echo esc_url( $g5_cards['g5_card1_label_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g5_cards['g5_card1_label_image']['alt'] ); ?>"
+                            />
+                            <div>
+                                <?php echo esc_html( $g5_cards['g5_card1_label_title'] ); ?>
+                            </div>
+                        </div>
+                        <span>
+                            <?php echo esc_html( $g5_cards['g5_card1_label_subtitle'] ); ?>
+                        </span>
                     </div>
-                    <span>Start or scale your partner program</span>
+                    <ul>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card1_list1'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card1_list2'] ); ?>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card1_list3'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card1_list4'] ); ?>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card1_list5'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card1_list6'] ); ?>
+                            </span>
+                        </li>
+                    </ul>
+                    <button>
+                        <?php echo esc_html( $g5_cards['g5_card1_button'] ); ?>
+                    </button>
                 </div>
-                <ul>
-                    <li>
-                        <span class="label_list_main">[1] Advanced Analytics</span>
-                        <span class="label_list_additional">Data-driven insights, robust partner management control</span>
-                    </li>
-                    <li>
-                        <span class="label_list_main">[2] Efficient Partner Management</span>
-                        <span class="label_list_additional">Innovative tool for better affiliate partnerships</span>
-                    </li>
-                    <li>
-                        <span class="label_list_main">[3] Customisation and 360° Integration</span>
-                        <span class="label_list_additional">Customisable options for efficient scaling</span>
-                    </li>
-                </ul>
-                <button>learn more</button>
-            </div>
 
-            <div class="cards_card" data-card-index="1">
-                <img src="<?php echo esc_url(get_theme_file_uri('src/icons/card1.svg')); ?>" />
-                <div class="card_label">
-                    <div class="card_label_wrapper">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/gear5partnerplatform.svg')); ?>" />
-                        <div>partner platform</div>
+                <div class="cards_card" data-card-index="1">
+                    <img
+                        src="<?php echo esc_url( $g5_cards['g5_card2_image']['url'] ); ?>"
+                        alt="<?php echo esc_url( $g5_cards['g5_card2_image']['alt'] ); ?>"
+                    />
+                    <div class="card_label">
+                        <div class="card_label_wrapper">
+                            <img
+                                src="<?php echo esc_url( $g5_cards['g5_card2_label_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g5_cards['g5_card2_label_image']['alt'] ); ?>"
+                            />
+                            <div>
+                                <?php echo esc_html( $g5_cards['g5_card2_label_title'] ); ?>
+                            </div>
+                        </div>
+                        <span>
+                            <?php echo esc_html( $g5_cards['g5_card2_label_subtitle'] ); ?>
+                        </span>
                     </div>
-                    <span>Start or scale your partner program</span>
+                    <ul>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card2_list1'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card2_list2'] ); ?>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card2_list3'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card2_list4'] ); ?>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card2_list5'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card2_list6'] ); ?>
+                            </span>
+                        </li>
+                    </ul>
+                    <button>
+                        <?php echo esc_html( $g5_cards['g5_card2_button'] ); ?>
+                    </button>
                 </div>
-                <ul>
-                    <li>
-                        <span class="label_list_main">[1] Advanced Analytics</span>
-                        <span class="label_list_additional">Data-driven insights, robust partner management control</span>
-                    </li>
-                    <li>
-                        <span class="label_list_main">[2] Efficient Partner Management</span>
-                        <span class="label_list_additional">Innovative tool for better affiliate partnerships</span>
-                    </li>
-                    <li>
-                        <span class="label_list_main">[3] Customisation and 360° Integration</span>
-                        <span class="label_list_additional">Customisable options for efficient scaling</span>
-                    </li>
-                </ul>
-                <button>learn more</button>
-            </div>
 
-            <div class="cards_card" data-card-index="2">
-                <img src="<?php echo esc_url(get_theme_file_uri('src/icons/card2.svg')); ?>" />
-                <div class="card_label">
-                    <div class="card_label_wrapper">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/gear5lead.svg')); ?>" />
-                        <div>Lead Distribution</div>
+                <div class="cards_card" data-card-index="2">
+                    <img
+                        src="<?php echo esc_url( $g5_cards['g5_card3_image']['url'] ); ?>"
+                        alt="<?php echo esc_url( $g5_cards['g5_card3_image']['alt'] ); ?>"
+                    />
+                    <div class="card_label">
+                        <div class="card_label_wrapper">
+                            <img
+                                src="<?php echo esc_url( $g5_cards['g5_card3_label_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g5_cards['g5_card3_label_image']['alt'] ); ?>"
+                            />
+                            <div>
+                                <?php echo esc_html( $g5_cards['g5_card3_label_title'] ); ?>
+                            </div>
+                        </div>
+                        <span>
+                             <?php echo esc_html( $g5_cards['g5_card3_label_subtitle'] ); ?>
+                        </span>
                     </div>
-                    <span>Start or scale your partner program</span>
+                    <ul>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card3_list1'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card3_list2'] ); ?>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card3_list3'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card3_list4'] ); ?>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label_list_main">
+                                <?php echo esc_html( $g5_cards['g5_card3_list5'] ); ?>
+                            </span>
+                            <span class="label_list_additional">
+                                <?php echo esc_html( $g5_cards['g5_card3_list6'] ); ?>
+                            </span>
+                        </li>
+                    </ul>
+                    <button>
+                        <?php echo esc_html( $g5_cards['g5_card3_button'] ); ?>
+
+                    </button>
                 </div>
-                <ul>
-                    <li>
-                        <span class="label_list_main">[1] Advanced Analytics</span>
-                        <span class="label_list_additional">Data-driven insights, robust partner management control</span>
-                    </li>
-                    <li>
-                        <span class="label_list_main">[2] Efficient Partner Management</span>
-                        <span class="label_list_additional">Innovative tool for better affiliate partnerships</span>
-                    </li>
-                    <li>
-                        <span class="label_list_main">[3] Customisation and 360° Integration</span>
-                        <span class="label_list_additional">Customisable options for efficient scaling</span>
-                    </li>
-                </ul>
-                <button>learn more</button>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
 
     <div class="home_gear5_lower_container">
-        <img
-                src="<?php echo esc_url(get_theme_file_uri('src/icons/gear5back.svg')); ?>"
-        />
-        <h2>frequently asked questions</h2>
-        <div class="home_gear5_accordion">
-            <div class="accordion_item">
-                <span>What is IREV?</span>
-                <span class="text_opened">In technical terms,IREV is a SaaS platform that allows brands to create, track and optimize partner programs, manage leads, and increase ad campaigns conversion rates. But behind every technology, there is a group of devoted people. And these people are also IREV.</span>
-                <button>
-                    <img
+
+        <?php
+        if( $g5_faq ): ?>
+            <img
+                src="<?php echo esc_url( $g5_faq['g5_faq_icon']['url'] ); ?>"
+                alt="<?php echo esc_url( $g5_faq['g5_faq_icon']['alt'] ); ?>"
+            />
+            <h2>
+                <?php echo esc_html( $g5_faq['g5_faq_title'] ); ?>
+            </h2>
+            <div class="home_gear5_accordion">
+                <div class="accordion_item">
+                    <span>
+                        <?php echo esc_html( $g5_faq['g5_faq1_title'] ); ?>
+                    </span>
+                    <span class="text_opened">
+                        <?php echo wp_kses_post( $g5_faq['g5_faq1_description'] ); ?>
+                    </span>
+                    <button>
+                        <img
                             class="open"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/accordionopen.svg')); ?>"
-                    />
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_open']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_open']['alt'] ); ?>"
+                        />
+                        <img
                             class="close"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/close.svg')); ?>"
-                    />
-                </button>
-            </div>
-            <div class="accordion_item">
-                <span>How much does IREV cost?</span>
-                <span class="text_opened">In technical terms,IREV is a SaaS platform that allows brands to create, track and optimize partner programs, manage leads, and increase ad campaigns conversion rates. But behind every technology, there is a group of devoted people. And these people are also IREV.</span>
-                <button>
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_close']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_close']['alt'] ); ?>"
+                        />
+                    </button>
+                </div>
+                <div class="accordion_item">
+                    <span>
+                        <?php echo esc_html( $g5_faq['g5_faq2_title'] ); ?>
+                    </span>
+                    <span class="text_opened">
+                        <?php echo wp_kses_post( $g5_faq['g5_faq2_description'] ); ?>
+                    </span>
+                    <button>
+                        <img
                             class="open"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/accordionopen.svg')); ?>"
-                    />
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_open']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_open']['alt'] ); ?>"
+                        />
+                        <img
                             class="close"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/close.svg')); ?>"
-                    />
-                </button>
-            </div>
-            <div class="accordion_item">
-                <span>How can I integrate IREV with my website?</span>
-                <span class="text_opened">In technical terms,IREV is a SaaS platform that allows brands to create, track and optimize partner programs, manage leads, and increase ad campaigns conversion rates. But behind every technology, there is a group of devoted people. And these people are also IREV.</span>
-                <button>
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_close']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_close']['alt'] ); ?>"
+                        />
+                    </button>
+                </div>
+                <div class="accordion_item">
+                    <span>
+                        <?php echo esc_html( $g5_faq['g5_faq3_title'] ); ?>
+                    </span>
+                    <span class="text_opened">
+                        <?php echo wp_kses_post( $g5_faq['g5_faq2_description'] ); ?>
+                    </span>
+                    <button>
+                        <img
                             class="open"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/accordionopen.svg')); ?>"
-                    />
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_open']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_open']['alt'] ); ?>"
+                        />
+                        <img
                             class="close"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/close.svg')); ?>"
-                    />
-                </button>
-            </div>
-            <div class="accordion_item">
-                <span>What types of business can benefit from IREV?</span>
-                <span class="text_opened">In technical terms,IREV is a SaaS platform that allows brands to create, track and optimize partner programs, manage leads, and increase ad campaigns conversion rates. But behind every technology, there is a group of devoted people. And these people are also IREV.</span>
-                <button>
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_close']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_close']['alt'] ); ?>"
+                        />
+                    </button>
+                </div>
+                <div class="accordion_item">
+                    <span>
+                        <?php echo esc_html( $g5_faq['g5_faq4_title'] ); ?>
+                    </span>
+                    <span class="text_opened">
+                        <?php echo wp_kses_post( $g5_faq['g5_faq4_description'] ); ?>
+                    </span>
+                    <button>
+                        <img
                             class="open"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/accordionopen.svg')); ?>"
-                    />
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_open']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_open']['alt'] ); ?>"
+                        />
+                        <img
                             class="close"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/close.svg')); ?>"
-                    />
-                </button>
-            </div>
-            <div class="accordion_item">
-                <span>Why choose IREV over other platforms?</span>
-                <span class="text_opened">In technical terms,IREV is a SaaS platform that allows brands to create, track and optimize partner programs, manage leads, and increase ad campaigns conversion rates. But behind every technology, there is a group of devoted people. And these people are also IREV.</span>
-                <button>
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_close']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_close']['alt'] ); ?>"
+                        />
+                    </button>
+                </div>
+                <div class="accordion_item">
+                    <span>
+                        <?php echo esc_html( $g5_faq['g5_faq5_title'] ); ?>
+                    </span>
+                    <span class="text_opened">
+                        <?php echo wp_kses_post( $g5_faq['g5_faq5_description'] ); ?>
+                    </span>
+                    <button>
+                        <img
                             class="open"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/accordionopen.svg')); ?>"
-                    />
-                    <img
+                            src="<?php echo esc_url( $g5_faq['g5_faq_open']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_open']['alt'] ); ?>"
+                        />
+                        <img
                             class="close"
-                            src="<?php echo esc_url(get_theme_file_uri('src/icons/close.svg')); ?>"
-                    />
-                </button>
+                            src="<?php echo esc_url( $g5_faq['g5_faq_close']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g5_faq['g5_faq_close']['alt'] ); ?>"
+                        />
+                    </button>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>

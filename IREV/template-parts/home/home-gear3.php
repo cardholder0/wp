@@ -2,217 +2,380 @@
 /**
  * Template Part: Home Gear3
  */
+    $g3_icon = get_field('g3_icon1');
+    $g3_bg1 = get_field('g3_bg1');
+    $g3_clients = get_field('g3_clients');
+    $g3_reviews = get_field('g3_reviews');
+    $g3_cases = get_field('g3_cases');
 ?>
 
 <section class="home_gear3">
     <header class="home_gear_header">
-        <span>[GEAR 03]</span>
-        <img
-            src="<?php echo esc_url(get_theme_file_uri('src/icons/gear3.svg')); ?>"
-        />
+        <span>
+            <?php echo esc_html( get_field('g3_title') ); ?>
+        </span>
+        <?php
+        if( !empty( $g3_icon ) ): ?>
+            <img
+                src="<?php echo esc_url($g3_icon['url']); ?>"
+                alt="<?php echo esc_attr($g3_icon['alt']); ?>"
+            />
+        <?php endif; ?>
     </header>
     <div class="home_gear3_container">
-        <h2>Hear from our satisfied partners</h2>
-        <img class="home_gear3_background" src="<?php echo esc_url(get_theme_file_uri('src/icons/gear3back.svg')); ?>"/>
-        <div class="home_gear3_clients">
-            <div class="home_gear3_clients_avatar">
-                <div class="avatar-item">
-                    <button data-trigger="client1">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar1.svg')); ?>"/>
-                    </button>
-                    <div class="tooltip">Ethan Miller</div>
-                </div>
-                <div class="avatar-item">
-                    <button data-trigger="client2">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar2.svg')); ?>"/>
-                    </button>
-                    <div class="tooltip">Brandon Carter</div>
-                </div>
-                <div class="avatar-item">
-                    <button data-trigger="client3">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar3.svg')); ?>"/>
-                    </button>
-                    <div class="tooltip">Emily Clarke</div>
-                </div>
-                <div class="avatar-item selected">
-                    <button data-trigger="client4">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
-                    </button>
-                    <div class="tooltip">Daniel Gram</div>
-                </div>
-                <div class="avatar-item">
-                    <button data-trigger="client5">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar5.svg')); ?>"/>
-                    </button>
-                    <div class="tooltip">Chloe Bennett</div>
-                </div>
-                <div class="avatar-item">
-                    <button data-trigger="client6">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar6.svg')); ?>"/>
-                    </button>
-                    <div class="tooltip">Dylan Cooper</div>
+        <h2>
+            <?php echo esc_html( get_field('g3_subtitle') ); ?>
+        </h2>
+        <?php
+        if( !empty( $g3_bg1 ) ): ?>
+            <img
+                class="home_gear3_background"
+                src="<?php echo esc_url($g3_bg1['url']); ?>"
+                alt="<?php echo esc_attr($g3_bg1['alt']); ?>"
+            />
+        <?php endif; ?>
+
+        <?php
+        if( $g3_clients ): ?>
+            <div class="home_gear3_clients">
+                <div class="home_gear3_clients_avatar">
+                    <div class="avatar-item">
+                        <button data-trigger="client1">
+                            <img
+                                src="<?php echo esc_url( $g3_clients['g3_client1_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g3_clients['g3_client1_image']['alt'] ); ?>"
+                            />
+                        </button>
+                        <div class="tooltip">
+                            <?php echo esc_html( $g3_clients['g3_client1_name'] ); ?>
+                        </div>
+                    </div>
+                    <div class="avatar-item">
+                        <button data-trigger="client2">
+                            <img
+                                src="<?php echo esc_url( $g3_clients['g3_client2_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g3_clients['g3_client2_image']['alt'] ); ?>"
+                            />
+                        </button>
+                        <div class="tooltip">
+                            <?php echo esc_html( $g3_clients['g3_client2_name'] ); ?>
+                        </div>
+                    </div>
+                    <div class="avatar-item">
+                        <button data-trigger="client3">
+                            <img
+                                src="<?php echo esc_url( $g3_clients['g3_client3_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g3_clients['g3_client3_image']['alt'] ); ?>"
+                            />
+                        </button>
+                        <div class="tooltip">
+                            <?php echo esc_html( $g3_clients['g3_client3_name'] ); ?>
+                        </div>
+                    </div>
+                    <div class="avatar-item selected">
+                        <button data-trigger="client4">
+                            <img
+                                src="<?php echo esc_url( $g3_clients['g3_client4_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g3_clients['g3_client4_image']['alt'] ); ?>"
+                            />
+                        </button>
+                        <div class="tooltip">
+                            <?php echo esc_html( $g3_clients['g3_client4_name'] ); ?>
+                        </div>
+                    </div>
+                    <div class="avatar-item">
+                        <button data-trigger="client5">
+                            <img
+                                src="<?php echo esc_url( $g3_clients['g3_client5_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g3_clients['g3_client5_image']['alt'] ); ?>"
+                            />
+                        </button>
+                        <div class="tooltip">
+                            <?php echo esc_html( $g3_clients['g3_client5_name'] ); ?>
+                        </div>
+                    </div>
+                    <div class="avatar-item">
+                        <button data-trigger="client6">
+                            <img
+                                src="<?php echo esc_url( $g3_clients['g3_client6_image']['url'] ); ?>"
+                                alt="<?php echo esc_url( $g3_clients['g3_client6_image']['alt'] ); ?>"
+                            />
+                        </button>
+                        <div class="tooltip">
+                            <?php echo esc_html( $g3_clients['g3_client6_name'] ); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
 
+        <?php
+        if( $g3_reviews ): ?>
             <div class="home_gear3_reviews">
                 <div class="home_gear3_reviews_review" data-client="client1">
-                    <span>text 1</span>
+                    <span>
+                        <?php echo wp_kses_post( $g3_reviews['g3_review1_text'] ); ?>
+                    </span>
                     <div class="client">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
+                        <img
+                            src="<?php echo esc_url( $g3_reviews['g3_review1_image']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_reviews['g3_review1_image']['alt'] ); ?>"
+                        />
                         <div class="client_info">
-                            <span class="client_name">Ethan Miller</span>
-                            <span class="client_additional">bulls media</span>
+                            <span class="client_name">
+                                <?php echo esc_html( $g3_reviews['g3_review1_name'] ); ?>
+                            </span>
+                            <span class="client_additional">
+                                <?php echo esc_html( $g3_reviews['g3_review1_company'] ); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="home_gear3_reviews_review" data-client="client2">
-                    <span>text 2</span>
+                    <span>
+                        <?php echo wp_kses_post( $g3_reviews['g3_review2_text'] ); ?>
+                    </span>
                     <div class="client">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
+                        <img
+                            src="<?php echo esc_url( $g3_reviews['g3_review2_image']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_reviews['g3_review2_image']['alt'] ); ?>"
+                        />
                         <div class="client_info">
-                            <span class="client_name">Brandon Carter</span>
-                            <span class="client_additional">bulls media</span>
+                            <span class="client_name">
+                                <?php echo esc_html( $g3_reviews['g3_review2_name'] ); ?>
+                            </span>
+                            <span class="client_additional">
+                                <?php echo esc_html( $g3_reviews['g3_review2_company'] ); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="home_gear3_reviews_review" data-client="client3">
-                    <span>text 3</span>
+                    <span>
+                        <?php echo wp_kses_post( $g3_reviews['g3_review3_text'] ); ?>
+                    </span>
                     <div class="client">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
+                        <img
+                            src="<?php echo esc_url( $g3_reviews['g3_review3_image']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_reviews['g3_review3_image']['alt'] ); ?>"
+                        />
                         <div class="client_info">
-                            <span class="client_name">Emily Clarke</span>
-                            <span class="client_additional">bulls media</span>
+                            <span class="client_name">
+                                <?php echo esc_html( $g3_reviews['g3_review3_name'] ); ?>
+                            </span>
+                            <span class="client_additional">
+                                <?php echo esc_html( $g3_reviews['g3_review3_company'] ); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="home_gear3_reviews_review selected" data-client="client4">
-                <span>IREV covers everything for the convenient and effective management of affiliate programs. We've been very happy with the platform and support from day one. What comes to Lead Distribution tool, it became
-a game-changer for us. You wouldn't find the same convenience elsewhere.</span>
+                    <span>
+                        <?php echo wp_kses_post( $g3_reviews['g3_review4_text'] ); ?>
+                    </span>
                     <div class="client">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
+                        <img
+                            src="<?php echo esc_url( $g3_reviews['g3_review4_image']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_reviews['g3_review4_image']['alt'] ); ?>"
+                        />
                         <div class="client_info">
-                            <span class="client_name">Ethan Miller</span>
-                            <span class="client_additional">bulls media</span>
+                            <span class="client_name">
+                                <?php echo esc_html( $g3_reviews['g3_review4_name'] ); ?>
+                            </span>
+                            <span class="client_additional">
+                                <?php echo esc_html( $g3_reviews['g3_review4_company'] ); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="home_gear3_reviews_review" data-client="client5">
-                    <span>text4</span>
+                    <span>
+                        <?php echo wp_kses_post( $g3_reviews['g3_review5_text'] ); ?>
+                    </span>
                     <div class="client">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
+                        <img
+                            src="<?php echo esc_url( $g3_reviews['g3_review5_image']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_reviews['g3_review5_image']['alt'] ); ?>"
+                        />
                         <div class="client_info">
-                            <span class="client_name">Chloe Bennett</span>
-                            <span class="client_additional">bulls media</span>
+                            <span class="client_name">
+                                <?php echo esc_html( $g3_reviews['g3_review5_name'] ); ?>
+                            </span>
+                            <span class="client_additional">
+                                <?php echo esc_html( $g3_reviews['g3_review5_company'] ); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="home_gear3_reviews_review" data-client="client6">
-                    <span>text 5</span>
+                    <span>
+                        <?php echo wp_kses_post( $g3_reviews['g3_review6_text'] ); ?>
+                    </span>
                     <div class="client">
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/avatar4.svg')); ?>"/>
+                        <img
+                            src="<?php echo esc_url( $g3_reviews['g3_review6_image']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_reviews['g3_review6_image']['alt'] ); ?>"
+                        />
                         <div class="client_info">
-                            <span class="client_name">Dylan Cooper</span>
-                            <span class="client_additional">bulls media</span>
+                            <span class="client_name">
+                                <?php echo esc_html( $g3_reviews['g3_review6_name'] ); ?>
+                            </span>
+                            <span class="client_additional">
+                                <?php echo esc_html( $g3_reviews['g3_review6_company'] ); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
+        <?php endif; ?>
     </div>
 
-    <div class="home_gear3_lower_container">
-        <h2>PROVEN ON THE TRACK</h2>
-        <img class="back" src="<?php echo esc_url(get_theme_file_uri('src/icons/gear3back2.svg')); ?>"/>
-        <div class="dashed_vertical"></div>
-        <div class="dashed_horizontal"></div>
-        <div class="lower_wrapper">
-            <div class="home_gear3_lower_left">
-                <div class="dashed_vertical"></div>
-                <div class="label">
-                    <img src="<?php echo esc_url(get_theme_file_uri('src/icons/playpartnersicon.svg')); ?>"/>
-                    <div>PLAY PARTNERS</div>
-                </div>
-                <span>Bigger, faster, stronger – solutions for a modern business</span>
-                <div class="cases_wraper">
-                    <div class="case">
-                        <div class="dashed_vertical"></div>
-                        <div class="case_label">
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/ftds.svg')); ?>"/>
-                            <span>FTDS</span>
+    <?php
+    if( $g3_cases): ?>
+        <div class="home_gear3_lower_container">
+            <h2>
+                <?php echo esc_html( $g3_cases['g3_cases_title'] ); ?>
+            </h2>
+            <img
+                class="back"
+                src="<?php echo esc_url( $g3_cases['g3_cases_bg']['url'] ); ?>"
+                alt="<?php echo esc_url( $g3_cases['g3_cases_bg']['alt'] ); ?>"
+            />
+            <div class="dashed_vertical"></div>
+            <div class="dashed_horizontal"></div>
+            <div class="lower_wrapper">
+                <?php if( have_rows('g3_cases') ): while( have_rows('g3_cases') ): the_row();
+                    $g3_cases_left = get_sub_field('g3_cases_left');
+                    $g3_cases_right = get_sub_field('g3_cases_right');
+                ?>
+                <div class="home_gear3_lower_left">
+                    <div class="dashed_vertical"></div>
+                    <div class="label">
+                        <img
+                            src="<?php echo esc_url( $g3_cases_left['g3_cases_left_icon']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_cases_left['g3_cases_left_icon']['alt'] ); ?>"
+                        />
+                        <div>
+                            <?php echo esc_html( $g3_cases_left['g3_cases_left_title'] ); ?>
                         </div>
-                        <span>
-                        x3.5 increase in FTDs in 6 months
-                    </span>
                     </div>
+                    <span>
+                        <?php echo esc_html( $g3_cases_left['g3_cases_left_subtitle'] ); ?>
+                    </span>
+                    <div class="cases_wraper">
+                        <div class="case">
+                            <div class="dashed_vertical"></div>
+                            <div class="case_label">
+                                <img
+                                    src="<?php echo esc_url( $g3_cases_left['g3_cases_left_case1_icon']['url'] ); ?>"
+                                    alt="<?php echo esc_url( $g3_cases_left['g3_cases_left_case1_icon']['alt'] ); ?>"
+                                />
+                                <span>
+                                    <?php echo esc_html( $g3_cases_left['g3_cases_left_case1_title'] ); ?>
+                                </span>
+                            </div>
+                            <span>
+                                <?php echo esc_html( $g3_cases_left['g3_cases_left_case1_description'] ); ?>
+                            </span>
+                        </div>
 
-                    <div class="case">
-                        <div class="dashed_vertical"></div>
-                        <div class="case_label">
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/CR.svg')); ?>"/>
-                            <span>CR</span>
+                        <div class="case">
+                            <div class="dashed_vertical"></div>
+                            <div class="case_label">
+                                <img
+                                    src="<?php echo esc_url( $g3_cases_left['g3_cases_left_case2_icon']['url'] ); ?>"
+                                    alt="<?php echo esc_url( $g3_cases_left['g3_cases_left_case2_icon']['alt'] ); ?>"
+                                />
+                                <span>
+                                    <?php echo esc_html( $g3_cases_left['g3_cases_left_case2_title'] ); ?>
+                                </span>
+                            </div>
+                            <span>
+                                <?php echo esc_html( $g3_cases_left['g3_cases_left_case2_description'] ); ?>
+                            </span>
                         </div>
-                        <span>
-                        x6 times CR increased
-                    </span>
-                    </div>
 
-                    <div class="case">
-                        <div class="dashed_vertical"></div>
-                        <div class="case_label">
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/geos.svg')); ?>"/>
-                            <span>geos</span>
+                        <div class="case">
+                            <div class="dashed_vertical"></div>
+                            <div class="case_label">
+                                <img
+                                    src="<?php echo esc_url( $g3_cases_left['g3_cases_left_case3_icon']['url'] ); ?>"
+                                    alt="<?php echo esc_url( $g3_cases_left['g3_cases_left_case3_icon']['alt'] ); ?>"
+                                />
+                                <span>
+                                    <?php echo esc_html( $g3_cases_left['g3_cases_left_case3_title'] ); ?>
+                                </span>
+                            </div>
+                            <span>
+                                <?php echo esc_html( $g3_cases_left['g3_cases_left_case3_description'] ); ?>
+                            </span>
                         </div>
-                        <span>
-                        150% increased in GEOS
-                    </span>
                     </div>
+                    <button>
+                        <?php echo esc_html( $g3_cases_left['g3_cases_left_button'] ); ?>
+                    </button>
                 </div>
-                <button>read full case</button>
+                <div class="home_gear3_lower_right">
+                    <div class="dashed_vertical"></div>
+                    <div class="label">
+                        <img
+                            src="<?php echo esc_url( $g3_cases_right['g3_cases_right_icon']['url'] ); ?>"
+                            alt="<?php echo esc_url( $g3_cases_right['g3_cases_right_icon']['alt'] ); ?>"
+                        />
+                        <div>
+                            <?php echo esc_html( $g3_cases_right['g3_cases_right_title'] ); ?>
+                        </div>
+                    </div>
+                    <span>
+                        <?php echo esc_html( $g3_cases_right['g3_cases_right_subtitle'] ); ?>
+                    </span>
+                </div>
             </div>
-            <div class="home_gear3_lower_right">
-                <div class="dashed_vertical"></div>
-                <div class="label">
-                    <img src="<?php echo esc_url(get_theme_file_uri('src/icons/playpartnersicon.svg')); ?>"/>
-                    <div>PLAY PARTNERS</div>
+
+            <div class="right_bottom">
+                <div class="right_cases_wrapper">
+                    <div class="case">
+                        <div class="dashed_vertical"></div>
+                        <div class="case_label">
+                            <span>
+                                <?php echo esc_html( $g3_cases_right['g3_cases_right_case1_title'] ); ?>
+                            </span>
+                        </div>
+                        <span>
+                            <?php echo esc_html( $g3_cases_right['g3_cases_right_case1_description'] ); ?>
+                        </span>
+                    </div>
+
+                    <div class="case">
+                        <div class="dashed_vertical"></div>
+                        <div class="case_label">
+                            <span>
+                                <?php echo esc_html( $g3_cases_right['g3_cases_right_case2_title'] ); ?>
+                            </span>
+                        </div>
+                        <span>
+                             <?php echo esc_html( $g3_cases_right['g3_cases_right_case2_description'] ); ?>
+                        </span>
+                    </div>
+
+                    <div class="case">
+                        <div class="dashed_vertical"></div>
+                        <div class="case_label">
+                            <span>
+                                <?php echo esc_html( $g3_cases_right['g3_cases_right_case3_title'] ); ?>
+                            </span>
+                        </div>
+                        <span>
+                             <?php echo esc_html( $g3_cases_right['g3_cases_right_case3_description'] ); ?>
+                        </span>
+                    </div>
                 </div>
-                <span>IGaming partnership launched in heaven</span>
+                <button>
+                    <?php echo esc_html( $g3_cases_right['g3_cases_right_button'] ); ?>
+                </button>
             </div>
         </div>
-
-        <div class="right_bottom">
-            <div class="right_cases_wrapper">
-                <div class="case">
-                    <div class="dashed_vertical"></div>
-                    <div class="case_label">
-                        <span>750 %</span>
-                    </div>
-                    <span>
-                        reduction in onboarding time
-                    </span>
-                </div>
-
-                <div class="case">
-                    <div class="dashed_vertical"></div>
-                    <div class="case_label">
-                        <span>$ 1-3 MLN</span>
-                    </div>
-                    <span>
-                        discrepancy losses prevented
-                    </span>
-                </div>
-
-                <div class="case">
-                    <div class="dashed_vertical"></div>
-                    <div class="case_label">
-                        <span>20 +</span>
-                    </div>
-                    <span>
-                        operators covered
-                    </span>
-                </div>
-            </div>
-            <button>read full case</button>
-        </div>
-
-    </div>
+        <?php endwhile; ?>
+        <?php endif; ?>
+    <?php endif; ?>
 </section>

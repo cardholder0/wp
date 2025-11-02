@@ -2,58 +2,111 @@
 /**
  * Template Part: Home Gear1
  */
+    $g1_icon = get_field('g1_icon');
+    $g1_section1 = get_field('g1_section1');
+    $g1_section2 = get_field('g1_section2');
+    $g1_section3 = get_field('g1_section3');
+    $g1_section4 = get_field('g1_section4');
+    $g1_section5 = get_field('g1_section5');
 ?>
 
 <section class="home_gear1">
     <header class="home_gear_header">
-        <span>[GEAR 01]</span>
-        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/gear1.svg')); ?>" />
+        <span>
+            <?php echo esc_html( get_field('g1_title') ); ?>
+        </span>
+        <?php
+        if( !empty( $g1_icon ) ): ?>
+            <img
+                src="<?php echo esc_url($g1_icon['url']); ?>"
+                alt="<?php echo esc_attr($g1_icon['alt']); ?>"
+            />
+        <?php endif; ?>
     </header>
     <div class="home_gear1_wrapper">
-        <div class="home_gear1_info_container" data-section="1">
-            <span class="home_gear1_info_label">[1]INTEGRATION</span>
-            <div class="home_gear1_info_text_container">
-                <h2>launch your affiliate program full throttle</h2>
-                <span class="home_gear1_info_text_container_text">
-                    <span class="home_gear1_info_text_container_text_colored">Use 160+ premium features</span>: from custom performance widgets, cohort reports, automatic CRG calculation to flexible payment models. IREV solutions will quickly become a seamless part of your marketing ecosystem without migration headache.
+        <?php
+        if( $g1_section1 ): ?>
+            <div class="home_gear1_info_container" data-section="1">
+                <span class="home_gear1_info_label">
+                    <?php echo esc_html( $g1_section1['g1_section1_title'] ); ?>
                 </span>
+                <div class="home_gear1_info_text_container">
+                    <h2>
+                        <?php echo esc_html( $g1_section1['g1_section1_subtitle'] ); ?>
+                    </h2>
+                    <span class="home_gear1_info_text_container_text">
+                        <?php echo wp_kses_post( $g1_section1['g1_section1_description'] ); ?>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="home_gear1_info_container" data-section="2">
-            <span class="home_gear1_info_label">[2]OPTIMISATION</span>
-            <div class="home_gear1_info_text_container">
-                <h2>Get dashboard-grade insights to leave your competitors in the dust</h2>
-                <span class="home_gear1_info_text_container_text">
-                    Define custom metrics for deeper insights into your performance, and tweak your experience with <span class="home_gear1_info_text_container_text_colored">over 50 statistics settings</span> to fine-tune your operational workflow.
+        <?php endif; ?>
+
+        <?php
+        if( $g1_section2 ): ?>
+            <div class="home_gear1_info_container" data-section="2">
+                <span class="home_gear1_info_label">
+                    <?php echo esc_html( $g1_section2['g1_section2_title'] ); ?>
                 </span>
+                <div class="home_gear1_info_text_container">
+                    <h2>
+                        <?php echo esc_html( $g1_section2['g1_section2_subtitle'] ); ?>
+                    </h2>
+                    <span class="home_gear1_info_text_container_text">
+                        <?php echo wp_kses_post( $g1_section2['g1_section2_description'] ); ?>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="home_gear1_info_container" data-section="3">
-            <span class="home_gear1_info_label">[3]SAFETY</span>
-            <div class="home_gear1_info_text_container">
-                <h2>Keep your eyes on the road - we'll take care of the engine under the hood</h2>
-                <span class="home_gear1_info_text_container_text">
-                    <span class="home_gear1_info_text_container_text_colored">3 levels of business protection</span>: data privacy, user safety, fraud prevention with advanced security options and the latest cloud solutions. IREV allows you to focus on strategic decisions and growth.
+        <?php endif; ?>
+
+        <?php
+        if( $g1_section3 ): ?>
+            <div class="home_gear1_info_container" data-section="3">
+                <span class="home_gear1_info_label">
+                    <?php echo esc_html( $g1_section3['g1_section3_title'] ); ?>
                 </span>
+                <div class="home_gear1_info_text_container">
+                    <h2>
+                        <?php echo esc_html( $g1_section3['g1_section3_subtitle'] ); ?>
+                    </h2>
+                    <span class="home_gear1_info_text_container_text">
+                        <?php echo wp_kses_post( $g1_section3['g1_section3_description'] ); ?>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="home_gear1_info_container" data-section="4">
-            <span class="home_gear1_info_label">[4]MOTIVATION</span>
-            <div class="home_gear1_info_text_container">
-                <h2>Turbocharge your partners with next-level performance boosters</h2>
-                <span class="home_gear1_info_text_container_text">
-                    Motivate your affiliates with an advanced payout system, KPI and lead distribution assistance. These tools help IREV clients to increase <span class="home_gear1_info_text_container_text_colored">income by 30% during the first 60 days on average</span>. Break this record with us.
+        <?php endif; ?>
+
+        <?php
+        if( $g1_section4 ): ?>
+            <div class="home_gear1_info_container" data-section="4">
+                <span class="home_gear1_info_label">
+                    <?php echo esc_html( $g1_section4['g1_section4_title'] ); ?>
                 </span>
+                <div class="home_gear1_info_text_container">
+                    <h2>
+                        <?php echo esc_html( $g1_section4['g1_section4_subtitle'] ); ?>
+                    </h2>
+                    <span class="home_gear1_info_text_container_text">
+                        <?php echo wp_kses_post( $g1_section4['g1_section4_description'] ); ?>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="home_gear1_info_container" data-section="5">
-            <span class="home_gear1_info_label">[5]SUPPORT</span>
-            <div class="home_gear1_info_text_container">
-                <h2>Like a pit stop at 300 km/h – our support keeps you racing</h2>
-                <span class="home_gear1_info_text_container_text">
-                    Full onboarding, account setup, and hands-on assistance with <span class="home_gear1_info_text_container_text_colored">98% client satisfaction rate</span>. IREV is aimed on personalised service and support, fostering mutual growth.
+        <?php endif; ?>
+
+        <?php
+        if( $g1_section5 ): ?>
+            <div class="home_gear1_info_container" data-section="5">
+                <span class="home_gear1_info_label">
+                    <?php echo esc_html( $g1_section5['g1_section5_title'] ); ?>
                 </span>
+                <div class="home_gear1_info_text_container">
+                    <h2>
+                        <?php echo esc_html( $g1_section5['g1_section5_subtitle'] ); ?>
+                    </h2>
+                    <span class="home_gear1_info_text_container_text">
+                        <?php echo wp_kses_post( $g1_section5['g1_section5_description'] ); ?>
+                    </span>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>
